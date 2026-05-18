@@ -205,12 +205,21 @@ def main():
             st.sidebar.markdown("#### Point Operations")
             operation = st.sidebar.selectbox("Operation", ["Addition", "Subtraction", "Division", "Complement"])
             
-            if operation in ["Addition", "Subtraction"]:
-                value = st.sidebar.slider("Intensity Value", 0, 255, 50)
-                if operation == "Addition":
-                    processed_image = po.add_value(image_np, value)
+            if operation == "Addition":
+                second_img_file = st.sidebar.file_uploader("Upload Second Image", type=["png", "jpg", "jpeg"])
+                alpha = st.sidebar.slider("Blending Weight", 0.0, 1.0, 0.5, step=0.05)
+                if second_img_file is None:
+                    st.sidebar.info("Please upload a second image")
+                    processed_image = image_np
                 else:
-                    processed_image = po.subtract_value(image_np, value)
+                    image2 = Image.open(second_img_file)
+                    if image2.mode == 'RGBA':
+                        image2 = image2.convert('RGB')
+                    image2_np = np.array(image2)
+                    processed_image = po.add_images(image_np, image2_np, alpha)
+            elif operation == "Subtraction":
+                value = st.sidebar.slider("Intensity Value", 0, 255, 50)
+                processed_image = po.subtract_value(image_np, value)
                     
             elif operation == "Division":
                 value = st.sidebar.slider("Divisor Value", 1, 10, 2)
