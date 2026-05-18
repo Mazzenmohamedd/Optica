@@ -1,6 +1,6 @@
-# Optica: Advanced Image Processing Toolkit
+# Optica: Your Image Processing Toolkit
 
-Optica is a comprehensive, interactive image processing application built with Python and Streamlit. It provides a sleek, modern **Glassmorphism** interface to explore, analyze, and apply various fundamental and advanced image processing techniques in real-time.
+Optica is a comprehensive, interactive image processing application built with Python and Streamlit to explore, analyze, and apply various fundamental and advanced image processing techniques in real-time.
 
 ---
 
@@ -24,11 +24,11 @@ This application implements a vast array of image processing operations categori
 - **Histogram Equalization:** Improve image contrast using cumulative distribution functions.
 - *Includes real-time, interactive histogram plotting mapped to the original and processed image.*
 
-### 4. Neighborhood Processing (Spatial Filters)
+### 4. Neighborhood Processing
 - **Linear Filters:** Average (Blur) filter, Laplacian filter (Edge enhancement).
 - **Non-Linear Filters:** Maximum filter, Minimum filter, Median filter, and Mode filter.
 
-### 5. Image Restoration & Noise Removal
+### 5. Image Restoration and Noise Removal
 - **Salt & Pepper Noise:** Inject noise and restore the image using Average, Median, or Outlier filters.
 - **Gaussian Noise:** Inject statistical Gaussian noise and restore it using Average filtering or Image Averaging (combining multiple noisy frames).
 - *Displays a specialized 3-column comparative view: `Original | Noisy | Restored`.*
@@ -38,46 +38,27 @@ This application implements a vast array of image processing operations categori
 - **Otsu's Thresholding:** Automatic threshold calculation algorithm.
 - **Adaptive Thresholding:** Localized thresholding calculated dynamically based on neighborhood blocks.
 
-### 7. Edge Detection & Morphology
+### 7. Edge Detection and Morphology
 - **Sobel Edge Detection:** Highlight structural boundaries using X and Y gradients.
 - **Morphological Operations:** Dilation, Erosion, Opening.
 - **Boundary Extraction:** Internal and External boundaries.
 - **Morphological Gradient:** Difference between Dilation and Erosion.
 
 ---
-
-## 🎨 UI / UX Design
-Optica is built with a focus on modern aesthetic excellence:
-- **Glassmorphism Theme:** Semi-transparent frosted glass sidebars and cards (`backdrop-filter: blur`).
-- **Gradient Backgrounds:** Deep dark blue-to-teal environment (`#0a1628` to `#0d2137`).
-- **Accent Details:** Smooth micro-animations and glowing teal (`#00c9a7`) highlights on interactive elements.
-
----
-
-## 🛠️ Prerequisites & Installation
+## Usage & Installation
 
 1. **Clone the repository** (if you haven't already):
    ```bash
    git clone https://github.com/Mazzenmohamedd/Optica.git
    cd Optica
    ```
-
+   
 2. **Install the required dependencies**:
    ```bash
    pip install -r requirements.txt
    ```
-   *Required packages include: `streamlit`, `opencv-python`, `numpy`, `scipy`, `matplotlib`, `Pillow`.*
 
----
-
-## 🚀 Usage
-
-To launch the Optica workspace, run the following command in your terminal:
-
-```bash
-streamlit run app.py
-```
-
-1. **Upload an Image** via the centralized dropzone on the home screen.
-2. **Select a Category** from the left control panel.
-3. **Tweak Parameters** in real-time using the sliders and dropdown menus to instantly see the processed results!
+3. **To launch the Optica workspace, run this command in your terminal**:
+   ```bash
+   streamlit run app.py
+   ```
